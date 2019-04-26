@@ -1,0 +1,165 @@
+{
+  "id": "b14b548d-2430-46d2-bf61-17e0f845c8ed",
+  "version": "2.0",
+  "name": "AutomatedWebTesting",
+  "url": "https://www.seleniumhq.org/",
+  "tests": [{
+    "id": "bb46fe27-e108-4ddd-ac14-bdc87fdf2ad9",
+    "name": "Selenium HQ Test",
+    "commands": [{
+      "id": "f1826ead-ce14-467f-9390-8f98ddb6faef",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "03474936-f41b-4071-b0b1-09b2549d7193",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=About",
+      "targets": [
+        ["linkText=About", "linkText"],
+        ["css=#menu_about > a", "css:finder"],
+        ["xpath=//a[contains(text(),'About')]", "xpath:link"],
+        ["xpath=//li[@id='menu_about']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/about/')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'About')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3463a1df-a568-4379-a5b1-ca578b563e4f",
+      "comment": "Select About element by its CSS link",
+      "command": "click",
+      "target": "css=h3:nth-child(3) > a",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "defe9408-d1e9-4175-9a75-19ec870a662a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Selenium IDE Is Dead, Long Live Selenium IDE!",
+      "targets": [
+        ["linkText=Selenium IDE Is Dead, Long Live Selenium IDE!", "linkText"],
+        ["css=ul:nth-child(5) > li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Selenium IDE Is Dead, Long Live Selenium IDE!')]", "xpath:link"],
+        ["xpath=//div[@id='mainContent']/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://feedproxy.google.com/~r/Selenium/~3/qZJ1oNPCLI8/']", "xpath:href"],
+        ["xpath=//div[2]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Selenium IDE Is Dead, Long Live Selenium IDE!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "833d3891-0e5b-4082-a14a-c04d7d39a6f9",
+      "comment": "",
+      "command": "click",
+      "target": "id=comments",
+      "targets": [
+        ["id=comments", "id"],
+        ["css=#comments", "css:finder"],
+        ["xpath=//h2[@id='comments']", "xpath:attributes"],
+        ["xpath=//div[@id='content']/h2[2]", "xpath:idRelative"],
+        ["xpath=//h2[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b05b6f8-1806-4b41-9d02-56ffb52ac5a9",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Selenium IDE Is Dead, Long Live Selenium IDE! | Official Selenium Blog",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "017ea991-cd08-45ce-b469-32a84fcac07f",
+      "comment": "",
+      "command": "verifyText",
+      "target": "linkText=Official Selenium Blog",
+      "targets": [
+        ["linkText=Official Selenium Blog", "linkText"],
+        ["css=#header > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Official Selenium Blog')]", "xpath:link"],
+        ["xpath=//h1[@id='header']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://seleniumhq.wordpress.com/')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Official Selenium Blog')]", "xpath:innerText"]
+      ],
+      "value": "Official Selenium Blog"
+    }]
+  }, {
+    "id": "73921345-2765-4b46-93bd-504715eb77bf",
+    "name": "Failed Login Attempt",
+    "commands": [{
+      "id": "b4cf8ca2-b13c-4d64-b848-aaf979f59c63",
+      "comment": "",
+      "command": "open",
+      "target": "https://login.yahoo.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9f045cb0-4449-4c5d-969c-2104ea5d54d1",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-username",
+      "targets": [
+        ["id=login-username", "id"],
+        ["name=username", "name"],
+        ["css=#login-username", "css:finder"],
+        ["xpath=//input[@id='login-username']", "xpath:attributes"],
+        ["xpath=//div[@id='username-country-code-field']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "74ff3159-a4db-41d4-80c3-185d6358d2d5",
+      "comment": "",
+      "command": "type",
+      "target": "id=login-username",
+      "targets": [
+        ["id=login-username", "id"],
+        ["name=username", "name"],
+        ["css=#login-username", "css:finder"],
+        ["xpath=//input[@id='login-username']", "xpath:attributes"],
+        ["xpath=//div[@id='username-country-code-field']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "invalid"
+    }, {
+      "id": "7500a23f-f4a8-40e7-8df0-549707355be4",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-signin",
+      "targets": [
+        ["id=login-signin", "id"],
+        ["name=signin", "name"],
+        ["css=#login-signin", "css:finder"],
+        ["xpath=//input[@id='login-signin']", "xpath:attributes"],
+        ["xpath=//form[@id='login-username-form']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "48b68323-bea8-48e4-93e3-339cda875f6d",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.error",
+      "targets": [
+        ["css=.error", "css:finder"],
+        ["xpath=//form[@id='login-username-form']/p", "xpath:idRelative"],
+        ["xpath=//form/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Niestety nie rozpoznajemy tego adresu e-mail.')]", "xpath:innerText"]
+      ],
+      "value": "Niestety nie rozpoznajemy tego adresu e-mail."
+    }]
+  }],
+  "suites": [{
+    "id": "49fc2f13-9e71-48b6-9602-77e412bcff9e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["bb46fe27-e108-4ddd-ac14-bdc87fdf2ad9", "73921345-2765-4b46-93bd-504715eb77bf"]
+  }],
+  "urls": ["https://www.seleniumhq.org/", "https://login.yahoo.com/"],
+  "plugins": []
+}
