@@ -5,8 +5,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebDriverDemo {
     public static void main(String[] args) {
+        WebDriver driver = getWebDriver();
+        DuckDuckGo duckDuckGo = new DuckDuckGo(driver);
+        duckDuckGo.test();
+    }
+
+    private static WebDriver getWebDriver() {
         System.setProperty("webdriver.gecko.driver", "./geckodriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://duckduckgo.com/");
+        return new ChromeDriver();
     }
 }
