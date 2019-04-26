@@ -32,5 +32,7 @@ class DuckDuckGo {
 
         WebElement imageLink = driver.findElements(By.className("detail__media")).get(0).findElement(By.tagName("a"));
         imageLink.click();
+
+        assert driver.getCurrentUrl().contains("SeBlackRed.jpg");
     }
 }
