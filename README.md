@@ -6,4 +6,5 @@ Automated Web Testing with Selenium and WebDriver Using Java
  - grid: 
    - hub: `java -jar selenium-server-standalone-3.141.59.jar -role hub`
    - node: `java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://localhost:4444/grid/register/`
+   - 2nd node: `java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://localhost:4444/grid/register/ -port 5556`
    - verify it on website: http://localhost:4444/grid/console/
