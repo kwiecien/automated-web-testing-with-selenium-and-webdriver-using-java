@@ -151,6 +151,52 @@
       ],
       "value": "Niestety nie rozpoznajemy tego adresu e-mail."
     }]
+  }, {
+    "id": "292b618b-0b9d-4c63-bbfa-1088e006d440",
+    "name": "Framework",
+    "commands": [{
+      "id": "bff851d2-c81e-4c23-8277-a37bac530d29",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.seleniumhq.org/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2843192-d590-4f03-a122-db36308f6c28",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=About",
+      "targets": [
+        ["linkText=About", "linkText"],
+        ["css=#menu_about > a", "css:finder"],
+        ["xpath=//a[contains(text(),'About')]", "xpath:link"],
+        ["xpath=//li[@id='menu_about']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/about/')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'About')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd43f965-2978-4754-996f-b6eadd451619",
+      "comment": "",
+      "command": "click",
+      "target": "css=h3:nth-child(3) > a",
+      "targets": [
+        ["css=h3:nth-child(3) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'News/Blog')])[2]", "xpath:link"],
+        ["xpath=//div[@id='mainContent']/h3/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'news.jsp')])[2]", "xpath:href"],
+        ["xpath=//h3/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b279c3c3-c946-4c48-aecb-5da3632b0d8a",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Selenium News",
+      "targets": [],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "49fc2f13-9e71-48b6-9602-77e412bcff9e",
