@@ -19,7 +19,6 @@ class DuckDuckGo {
 
     void test() {
         driver.get(address);
-        WebDriverWait wait = new WebDriverWait(driver, WebDriverWait.DEFAULT_SLEEP_TIMEOUT);
 
         WebElement searchField = driver.findElement(By.id("search_form_input_homepage"));
         searchField.sendKeys("selenium");
@@ -28,8 +27,9 @@ class DuckDuckGo {
         WebElement imagesLink = driver.findElement(By.linkText("Images"));
         imagesLink.click();
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        // wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(imageSelector)));
+        // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(driver, WebDriverWait.DEFAULT_SLEEP_TIMEOUT);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(imageSelector)));
         WebElement imageElement = driver.findElements(By.cssSelector(imageSelector)).get(0);
         imageElement.click();
 
