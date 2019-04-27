@@ -1,6 +1,7 @@
 package com.kk;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -16,15 +17,18 @@ public class WebDriverDuckDuckGo {
         WebDriver driver = getWebDriver();
         driver.get("https://duckduckgo.com/");
 
+        WebDriverWait wait = new WebDriverWait(driver, WebDriverWait.DEFAULT_SLEEP_TIMEOUT);
+
         WebElement searchField = driver.findElement(By.id("search_form_input_homepage"));
         searchField.sendKeys("selenium");
         searchField.submit();
 
-        WebElement imagesLink = driver.findElement(By.linkText("Images"));
+//        WebElement imagesLink = driver.findElement(By.linkText("Images"));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Grafika")));
+        WebElement imagesLink = driver.findElement(By.linkText("Grafika"));
         imagesLink.click();
 
         // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        WebDriverWait wait = new WebDriverWait(driver, WebDriverWait.DEFAULT_SLEEP_TIMEOUT);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.tile--img__media")));
         WebElement imageElement = driver.findElements(By.cssSelector("div.tile--img__media")).get(0);
         imageElement.click();
@@ -38,6 +42,6 @@ public class WebDriverDuckDuckGo {
     private static WebDriver getWebDriver() throws MalformedURLException {
         return new RemoteWebDriver(
                 new URL("http://localhost:4444/wd/hub"),
-                DesiredCapabilities.chrome());
+                new DesiredCapabilities("firefox", "", Platform.WINDOWS));
     }
 }
