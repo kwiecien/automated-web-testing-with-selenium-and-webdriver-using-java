@@ -3,12 +3,16 @@ package com.kk;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class WebDriverDuckDuckGo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         WebDriver driver = getWebDriver();
         driver.get("https://duckduckgo.com/");
 
@@ -31,8 +35,9 @@ public class WebDriverDuckDuckGo {
         assert driver.getCurrentUrl().contains("SeBlackRed.jpg");
     }
 
-    private static WebDriver getWebDriver() {
-        System.setProperty("webdriver.gecko.driver", "./geckodriver.exe");
-        return new ChromeDriver();
+    private static WebDriver getWebDriver() throws MalformedURLException {
+        return new RemoteWebDriver(
+                new URL("http://localhost:4444/wd/hub"),
+                DesiredCapabilities.chrome());
     }
 }
