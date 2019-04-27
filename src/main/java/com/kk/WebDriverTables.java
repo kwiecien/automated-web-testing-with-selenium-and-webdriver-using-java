@@ -10,9 +10,11 @@ public class WebDriverTables {
         WebDriver driver = new ChromeDriver();
         driver.get("file:///C:/Users/kk/dev/automated-web-testing-with-selenium-and-webdriver-using-java/src/main/webapp/TableTest.html");
 
-        WebElement outerTable = driver.findElement(By.tagName("table"));
-        WebElement innerTable = outerTable.findElement(By.tagName("table"));
-        WebElement row = innerTable.findElements(By.tagName("td")).get(1);
+        // WebElement outerTable = driver.findElement(By.tagName("table"));
+        // WebElement innerTable = outerTable.findElement(By.tagName("table"));
+        // WebElement row = innerTable.findElements(By.tagName("td")).get(1);
+
+        WebElement row = driver.findElement(By.xpath("/html/body/table/tbody/tr/td[2]/table/tbody/tr[2]/td"));
         System.out.println(row.getText());
     }
 }
