@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 class DuckDuckGo {
     private final WebDriver driver;
     private static final String address = "https://duckduckgo.com/";
@@ -26,7 +28,8 @@ class DuckDuckGo {
         WebElement imagesLink = driver.findElement(By.linkText("Images"));
         imagesLink.click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(imageSelector)));
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        // wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(imageSelector)));
         WebElement imageElement = driver.findElements(By.cssSelector(imageSelector)).get(0);
         imageElement.click();
 
