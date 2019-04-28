@@ -20,8 +20,9 @@ public class UnitTest {
 
     @Test
     public void canGoToNewsPage() {
-        Pages.aboutPage().goTo();
-        Pages.aboutPage().goToNews();
-        assertTrue(Pages.aboutPage().isAtNews());
+        Pages.aboutPages().goTo();
+        AboutPage aboutPage = Pages.aboutPages().getAboutPage("News");
+        aboutPage.goTo();
+        assertTrue(aboutPage.isAtSection("Selenium News"));
     }
 }
